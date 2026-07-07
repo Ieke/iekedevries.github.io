@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ieke de Vries, Ph.D. — Assistant Professor, Leiden University</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2321;
+    --paper:#f6f4ef;
+    --paper-raised:#fbfaf6;
+    --pine:#3b5d50;
+    --pine-deep:#294539;
+    --brass:#8b7355;
+    --rule:#dad5c8;
+    --text-soft:#5c6560;
+    --text-faint:#8b9089;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--pine); color:var(--paper);}
+  h1,h2,h3,h4{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    margin:0;
+    color:var(--ink);
+  }
+  a{color:var(--pine-deep);}
+  .mono{font-family:'IBM Plex Mono', monospace;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 32px;}
+
+  /* ---------- Nav ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(246,244,239,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav-inner{
+    max-width:1080px; margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; justify-content:space-between;
+    height:64px;
+  }
+  .nav-name{
+    font-family:'Source Serif 4', serif;
+    font-weight:600;
+    font-size:1.05rem;
+    letter-spacing:0.01em;
+    color:var(--ink);
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-name span{color:var(--pine);}
+  nav.nav-links{
+    display:flex; gap:28px;
+    overflow-x:auto;
+  }
+  nav.nav-links a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--text-soft);
+    text-decoration:none;
+    white-space:nowrap;
+    padding:4px 0;
+    border-bottom:1px solid transparent;
+    transition:color .15s, border-color .15s;
+  }
+  nav.nav-links a:hover, nav.nav-links a:focus-visible{
+    color:var(--pine-deep);
+    border-bottom-color:var(--pine);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:88px 0 72px;
+    overflow:hidden;
+    border-bottom:1px solid var(--rule);
+  }
+  .hero-net{
+    position:absolute;
+    top:-40px; right:-120px;
+    width:640px; height:640px;
+    opacity:0.55;
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.5fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:18px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px; background:var(--brass);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    line-height:1.05;
+    letter-spacing:-0.01em;
+  }
+  .hero .role{
+    margin-top:14px;
+    font-size:1.15rem;
+    color:var(--text-soft);
+  }
+  .hero .role strong{color:var(--ink); font-weight:600;}
+  .tag-row{
+    margin-top:28px;
+    display:flex; flex-wrap:wrap; gap:10px;
+  }
+  .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.03em;
+    padding:6px 12px;
+    border:1px solid var(--rule);
+    border-radius:2px;
+    color:var(--pine-deep);
+    background:var(--paper-raised);
+  }
+  .hero-links{
+    margin-top:34px;
+    display:flex; gap:18px; flex-wrap:wrap;
+    align-items:center;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--paper);
+    background:var(--pine-deep);
+    padding:12px 20px;
+    border-radius:2px;
+    transition:background .15s;
+  }
+  .btn:hover{background:var(--pine);}
+  .btn-ghost{
+    color:var(--pine-deep);
+    background:none;
+    border:1px solid var(--pine-deep);
+    padding:11px 20px;
+  }
+  .btn-ghost:hover{background:var(--pine-deep); color:var(--paper);}
+  .social-icons{display:flex; gap:14px; margin-left:4px;}
+  .social-icons a{
+    width:34px; height:34px;
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--rule);
+    border-radius:50%;
+    color:var(--pine-deep);
+    text-decoration:none;
+  }
+  .social-icons a:hover{border-color:var(--pine-deep); background:var(--paper-raised);}
+  .hero-portrait{
+    position:relative;
+    justify-self:end;
+  }
+  .hero-portrait img{
+    width:260px; height:auto;
+    display:block;
+    filter:grayscale(15%);
+    border:1px solid var(--rule);
+  }
+  .hero-portrait .frame-tag{
+    position:absolute;
+    bottom:-16px; left:-16px;
+    background:var(--pine-deep);
+    color:var(--paper);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.05em;
+    padding:8px 12px;
+  }
+
+  /* ---------- Section scaffolding ---------- */
+  section{
+    padding:76px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  section:last-of-type{border-bottom:none;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:24px;
+    margin-bottom:44px;
+    flex-wrap:wrap;
+  }
+  .section-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--text-faint);
+    letter-spacing:0.08em;
+  }
+  .section-head h2{
+    font-size:1.9rem;
+    margin-top:6px;
+  }
+  .section-sub{
+    max-width:520px;
+    color:var(--text-soft);
+    font-size:0.95rem;
+    text-align:right;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:48px;
+  }
+  .about-grid .label-col{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--brass);
+    padding-top:6px;
+  }
+  .about-body p{margin:0 0 18px; max-width:640px;}
+  .about-body p:last-child{margin-bottom:0;}
+
+  /* ---------- Pillars ---------- */
+  .pillar-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  .pillar{
+    background:var(--paper-raised);
+    padding:32px 28px;
+  }
+  .pillar .num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:var(--brass);
+    letter-spacing:0.06em;
+  }
+  .pillar h3{
+    font-size:1.2rem;
+    margin-top:14px;
+    margin-bottom:12px;
+  }
+  .pillar ul{
+    margin:0; padding-left:18px;
+    color:var(--text-soft);
+    font-size:0.92rem;
+  }
+  .pillar li{margin-bottom:6px;}
+
+  /* ---------- Publications ---------- */
+  .filter-row{
+    display:flex; gap:8px; flex-wrap:wrap;
+    margin-bottom:36px;
+  }
+  .filter-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding:8px 16px;
+    border:1px solid var(--rule);
+    background:var(--paper-raised);
+    color:var(--text-soft);
+    cursor:pointer;
+    border-radius:2px;
+    transition:all .15s;
+  }
+  .filter-btn:hover{border-color:var(--pine-deep); color:var(--pine-deep);}
+  .filter-btn.active{
+    background:var(--pine-deep);
+    border-color:var(--pine-deep);
+    color:var(--paper);
+  }
+  .pub-list{list-style:none; margin:0; padding:0;}
+  .pub{
+    display:grid;
+    grid-template-columns:70px 1fr;
+    gap:24px;
+    padding:22px 0;
+    border-top:1px solid var(--rule);
+  }
+  .pub:last-child{border-bottom:1px solid var(--rule);}
+  .pub-year{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    color:var(--brass);
+    padding-top:2px;
+  }
+  .pub-title{
+    font-family:'Source Serif 4', serif;
+    font-size:1.02rem;
+    font-weight:600;
+    line-height:1.4;
+    margin-bottom:6px;
+  }
+  .pub-title a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule);}
+  .pub-title a:hover{color:var(--pine-deep); border-bottom-color:var(--pine-deep);}
+  .pub-venue{
+    font-size:0.85rem;
+    color:var(--text-soft);
+    font-style:italic;
+  }
+  .pub-tags{
+    margin-top:8px;
+    display:flex; gap:6px; flex-wrap:wrap;
+  }
+  .pub-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    color:var(--pine-deep);
+    background:rgba(59,93,80,0.08);
+    padding:3px 8px;
+    border-radius:2px;
+  }
+  .pub[hidden]{display:none;}
+  .scholar-note{
+    margin-top:28px;
+    font-size:0.88rem;
+    color:var(--text-soft);
+  }
+
+  /* ---------- Ongoing ---------- */
+  .ongoing-card{
+    border:1px solid var(--rule);
+    background:var(--paper-raised);
+    padding:32px;
+    display:flex;
+    gap:28px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .ongoing-card .txt{flex:1; min-width:260px;}
+  .ongoing-card h3{font-size:1.15rem; margin-bottom:10px;}
+  .ongoing-card p{color:var(--text-soft); margin:0 0 16px; font-size:0.93rem;}
+
+  /* ---------- Teaching ---------- */
+  .teach-list{
+    display:flex; flex-direction:column;
+  }
+  .teach-row{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:32px;
+    padding:26px 0;
+    border-top:1px solid var(--rule);
+  }
+  .teach-row:last-child{border-bottom:1px solid var(--rule);}
+  .teach-title{font-size:1.05rem; font-weight:600; font-family:'Source Serif 4',serif;}
+  .teach-level{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-top:6px;
+  }
+  .teach-detail{color:var(--text-soft); font-size:0.92rem;}
+  .teach-detail a{color:var(--pine-deep);}
+  .award-note{
+    margin-top:36px;
+    padding:20px 24px;
+    border-left:3px solid var(--pine);
+    background:var(--paper-raised);
+    font-size:0.92rem;
+    color:var(--text-soft);
+  }
+
+  /* ---------- Awards ---------- */
+  .award-card{
+    border:1px solid var(--rule);
+    background:var(--paper-raised);
+    padding:32px;
+  }
+  .award-year{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--brass);
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+  }
+  .award-card h3{font-size:1.2rem; margin-top:10px; margin-bottom:6px;}
+  .award-card .funder{color:var(--pine-deep); font-size:0.92rem; margin-bottom:14px;}
+  .award-card p{color:var(--text-soft); font-size:0.93rem; margin:0 0 14px;}
+  .award-team{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    color:var(--text-faint);
+    line-height:1.7;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+  }
+  .contact-block h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--brass);
+    font-weight:500;
+    margin-bottom:14px;
+  }
+  .contact-block a.email{
+    display:block;
+    font-family:'Source Serif 4', serif;
+    font-size:1.15rem;
+    color:var(--ink);
+    text-decoration:none;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:10px;
+    margin-bottom:10px;
+  }
+  .contact-block a.email:hover{color:var(--pine-deep); border-bottom-color:var(--pine-deep);}
+  .contact-block p{color:var(--text-soft); font-size:0.92rem; margin-top:16px;}
+
+  footer{
+    padding:36px 0 48px;
+    display:flex; justify-content:space-between; align-items:center;
+    flex-wrap:wrap; gap:14px;
+  }
+  footer p{
+    margin:0;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:var(--text-faint);
+    letter-spacing:0.03em;
+  }
+  footer .social-icons a{width:30px; height:30px;}
+
+  @media (max-width: 860px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-portrait{justify-self:start; margin-top:10px;}
+    .about-grid{grid-template-columns:1fr;}
+    .pillar-grid{grid-template-columns:1fr;}
+    .teach-row{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .section-sub{text-align:left;}
+    .pub{grid-template-columns:50px 1fr;}
+    nav.nav-links{gap:18px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-name">Ieke de Vries<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#ongoing">Ongoing Work</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="border-bottom:1px solid var(--rule); padding-top:88px;">
+    <svg class="hero-net" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g stroke="#3b5d50" stroke-width="1" fill="none" opacity="0.5">
+        <line x1="80" y1="90" x2="220" y2="60"/>
+        <line x1="220" y1="60" x2="360" y2="130"/>
+        <line x1="220" y1="60" x2="180" y2="210"/>
+        <line x1="360" y1="130" x2="480" y2="90"/>
+        <line x1="360" y1="130" x2="410" y2="260"/>
+        <line x1="180" y1="210" x2="80" y2="90"/>
+        <line x1="180" y1="210" x2="290" y2="300"/>
+        <line x1="410" y1="260" x2="290" y2="300"/>
+        <line x1="410" y1="260" x2="520" y2="330"/>
+        <line x1="290" y1="300" x2="220" y2="420"/>
+        <line x1="220" y1="420" x2="340" y2="480"/>
+        <line x1="340" y1="480" x2="460" y2="440"/>
+        <line x1="460" y1="440" x2="520" y2="330"/>
+        <line x1="480" y1="90" x2="520" y2="330"/>
+      </g>
+      <g fill="#294539">
+        <circle cx="80" cy="90" r="4"/>
+        <circle cx="220" cy="60" r="5"/>
+        <circle cx="360" cy="130" r="6"/>
+        <circle cx="180" cy="210" r="7"/>
+        <circle cx="480" cy="90" r="4"/>
+        <circle cx="410" cy="260" r="6"/>
+        <circle cx="290" cy="300" r="8"/>
+        <circle cx="520" cy="330" r="5"/>
+        <circle cx="220" cy="420" r="5"/>
+        <circle cx="340" cy="480" r="6"/>
+        <circle cx="460" cy="440" r="4"/>
+      </g>
+    </svg>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Assistant Professor · Institute of Security and Global Affairs</div>
+        <h1>Ieke de Vries, Ph.D.</h1>
+        <p class="role">Studies <strong>human trafficking</strong>, <strong>victimization</strong>, and the <strong>spatial &amp; social networks</strong> that shape exposure to harm — at <strong>Leiden University</strong>, The Hague.</p>
+        <div class="tag-row">
+          <span class="tag">Sexual Exploitation of Minors</span>
+          <span class="tag">Human Trafficking</span>
+          <span class="tag">Risk Factors for Victimization</span>
+          <span class="tag">Ecological Context of Crime</span>
+          <span class="tag">Computational &amp; Network Methods</span>
+        </div>
+        <div class="hero-links">
+          <a class="btn" href="https://scholar.google.com/citations?user=XcRaMEoAAAAJ&hl=nl&oi=ao" target="_blank" rel="noopener">Google Scholar ↗</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/iekedevries/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="https://twitter.com/ieke_de_vries" target="_blank" rel="noopener" aria-label="Twitter / X">𝕏</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <img src="https://static.wixstatic.com/media/974979_ceeb8e993d9842fdb2fb68fb1fb2bf16~mv2.jpg/v1/crop/x_0,y_26,w_1281,h_1868/fill/w_384,h_560,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Photo_website.jpg" alt="Portrait of Ieke de Vries">
+        <div class="frame-tag">Leiden, NL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="label-col">01 — About</div>
+      <div class="about-body">
+        <h2 style="margin-bottom:20px;">Research Agenda</h2>
+        <p>Ieke de Vries is an Assistant Professor at Leiden University, where her work sits at the intersection of criminology, network science, and public health. Her research asks a deceptively simple question: who is exposed to sexual exploitation and human trafficking, and why — and how do the people, places, and institutions around a person shape that risk?</p>
+        <p>Her agenda spans three connected lines of inquiry: the <strong>victimization</strong> of minors and adults in trafficking and exploitation contexts; the institutional and policy <strong>responses</strong> that attempt to identify and address it; and the <strong>spatial and social network</strong> structures — from city blocks to peer ties — that concentrate or diffuse harm. Across all three, she draws on qualitative, quantitative, and computational methods to work with populations that are, by design, hard to observe.</p>
+        <p>Before joining Leiden University, she held positions at Northeastern University (Boston) and Florida State University, and was recognized with the 2019 Outstanding Teaching Award from Northeastern's College of Social Sciences and Humanities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH PILLARS -->
+  <section id="research">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num">02 — Research</div>
+          <h2>Three lines of inquiry</h2>
+        </div>
+        <p class="section-sub">Each pillar below anchors a body of published work — jump to Publications to filter by theme.</p>
+      </div>
+      <div class="pillar-grid">
+        <div class="pillar">
+          <div class="num">I.</div>
+          <h3>Victimization</h3>
+          <ul>
+            <li>Repeat victimization &amp; polyvictimization</li>
+            <li>Risk factors for the sexual exploitation of minors</li>
+            <li>Human trafficking victimizations</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="num">II.</div>
+          <h3>Tackling Human Trafficking</h3>
+          <ul>
+            <li>Public concern about human trafficking</li>
+            <li>Policing &amp; institutional responses</li>
+            <li>Identification &amp; indicator-based approaches</li>
+          </ul>
+        </div>
+        <div class="pillar">
+          <div class="num">III.</div>
+          <h3>Spatial &amp; Social Networks</h3>
+          <ul>
+            <li>Spatial and social context of crime &amp; victimization</li>
+            <li>Contextualizing human trafficking</li>
+            <li>Network exposure and diffusion of harm</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num">03 — Publications</div>
+          <h2>Selected publications</h2>
+        </div>
+        <p class="section-sub">Filter by research pillar. For the complete and continuously updated list, see the Google Scholar profile below.</p>
+      </div>
+
+      <div class="filter-row" role="tablist" aria-label="Filter publications by theme">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="victimization">Victimization</button>
+        <button class="filter-btn" data-filter="responses">Tackling Trafficking</button>
+        <button class="filter-btn" data-filter="spatial">Spatial &amp; Networks</button>
+      </div>
+
+      <ul class="pub-list" id="pub-list">
+
+        <li class="pub" data-tags="victimization spatial">
+          <div class="pub-year mono">2025</div>
+          <div>
+            <div class="pub-title"><a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2835161" target="_blank" rel="noopener">Social Network Exposure to Commercial Sexual Exploitation and Risk of Harm to Youths</a></div>
+            <div class="pub-venue">JAMA Network Open</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span><span class="pub-tag">Spatial &amp; Networks</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2025</div>
+          <div>
+            <div class="pub-title"><a href="https://www.sciencedirect.com/science/article/pii/S0145213425001942" target="_blank" rel="noopener">Social contexts of isolation, vulnerability, and resilience among minors with experiences of commercial sexual exploitation in the Netherlands</a></div>
+            <div class="pub-venue">Child Abuse &amp; Neglect</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2025</div>
+          <div>
+            <div class="pub-title"><a href="https://journals.sagepub.com/doi/abs/10.1177/10775595251327745" target="_blank" rel="noopener">Changing profiles of youth referred for commercial sexual exploitation before and since the onset of Covid-19 in the United States</a></div>
+            <div class="pub-venue">Child Maltreatment</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="spatial">
+          <div class="pub-year mono">2024</div>
+          <div>
+            <div class="pub-title"><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/1745-9125.12381" target="_blank" rel="noopener">Understanding the role of street network configurations in the placement of illegitimately operating facilities</a></div>
+            <div class="pub-venue">Criminology</div>
+            <div class="pub-tags"><span class="pub-tag">Spatial &amp; Networks</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="spatial">
+          <div class="pub-year mono">2024</div>
+          <div>
+            <div class="pub-title"><a href="https://journals.sagepub.com/doi/epdf/10.1177/10591478231224917" target="_blank" rel="noopener">The ties that link us: Uncovering the socio-technic connections of labor trafficking networks</a></div>
+            <div class="pub-venue">Policing &amp; Society (POM)</div>
+            <div class="pub-tags"><span class="pub-tag">Spatial &amp; Networks</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2024</div>
+          <div>
+            <div class="pub-title"><a href="https://journals.sagepub.com/doi/epub/10.1177/08862605241243332" target="_blank" rel="noopener">Examining individual and contextual correlates of victimization for juvenile human trafficking in Florida</a></div>
+            <div class="pub-venue">Journal of Interpersonal Violence</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="responses">
+          <div class="pub-year mono">2023</div>
+          <div>
+            <div class="pub-title"><a href="https://discovery.ucl.ac.uk/id/eprint/10160313/" target="_blank" rel="noopener">Governing through indicators: structural biases and empirical challenges in indicator-based approaches to human trafficking research and policy</a></div>
+            <div class="pub-venue">Edited volume chapter</div>
+            <div class="pub-tags"><span class="pub-tag">Tackling Trafficking</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="responses">
+          <div class="pub-year mono">2023</div>
+          <div>
+            <div class="pub-title"><a href="https://www.tandfonline.com/doi/pdf/10.1080/15564886.2022.2151539" target="_blank" rel="noopener">From responding to uncertainties and ambiguities to more constructive and inclusive debates on commercial sex and sex trafficking</a></div>
+            <div class="pub-venue">Victims &amp; Offenders</div>
+            <div class="pub-tags"><span class="pub-tag">Tackling Trafficking</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization spatial">
+          <div class="pub-year mono">2022</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1093/bjc/azab077" target="_blank" rel="noopener">Identifying online risk markers of hard-to-observe crimes through semi-inductive triangulation: The case of human trafficking in the United States</a></div>
+            <div class="pub-venue">British Journal of Criminology</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="responses">
+          <div class="pub-year mono">2022</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1080/07418825.2022.2051587" target="_blank" rel="noopener">Explaining the use of traditional law enforcement responses to human trafficking concerns in illicit massage businesses</a></div>
+            <div class="pub-venue">Justice Quarterly</div>
+            <div class="pub-tags"><span class="pub-tag">Tackling Trafficking</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="spatial">
+          <div class="pub-year mono">2022</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1177/00111287221090952" target="_blank" rel="noopener">Examining the geography of illicit massage businesses hosting commercial sex and sex trafficking in the United States: The role of census tract and city-level factors</a></div>
+            <div class="pub-venue">Crime &amp; Delinquency</div>
+            <div class="pub-tags"><span class="pub-tag">Spatial &amp; Networks</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="spatial">
+          <div class="pub-year mono">2022</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1080/01639625.2022.2110542" target="_blank" rel="noopener">A network approach to examine neighborhood interdependence through the target selection of repeat buyers of commercial sex in the United States</a></div>
+            <div class="pub-venue">Deviant Behavior</div>
+            <div class="pub-tags"><span class="pub-tag">Spatial &amp; Networks</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="spatial">
+          <div class="pub-year mono">2022</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1016/j.jadohealth.2021.12.026" target="_blank" rel="noopener">A network approach to examining co-occurring victimization and perpetration in dating abuse among a nationally representative sample of US adolescents</a></div>
+            <div class="pub-venue">Journal of Adolescent Health</div>
+            <div class="pub-tags"><span class="pub-tag">Spatial &amp; Networks</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2021</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1016/j.chiabu.2021.105092" target="_blank" rel="noopener">Understanding factors associated with re-referral of youth for commercial sexual exploitation</a></div>
+            <div class="pub-venue">Child Abuse &amp; Neglect</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="spatial">
+          <div class="pub-year mono">2021</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1016/j.jcrimjus.2022.101994" target="_blank" rel="noopener">A dyadic analysis of social network stability before and after incarceration</a></div>
+            <div class="pub-venue">Journal of Criminal Justice</div>
+            <div class="pub-tags"><span class="pub-tag">Spatial &amp; Networks</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="responses">
+          <div class="pub-year mono">2020</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1016/j.jcrimjus.2019.101651" target="_blank" rel="noopener">Crime frames and gender differences in the activation of crime concern and crime responses</a></div>
+            <div class="pub-venue">Journal of Criminal Justice</div>
+            <div class="pub-tags"><span class="pub-tag">Tackling Trafficking</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="responses">
+          <div class="pub-year mono">2020</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1007/s12117-019-09367-6" target="_blank" rel="noopener">Policing labor trafficking in the United States</a></div>
+            <div class="pub-venue">Trends in Organized Crime</div>
+            <div class="pub-tags"><span class="pub-tag">Tackling Trafficking</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2020</div>
+          <div>
+            <div class="pub-title"><a href="https://journals.sagepub.com/doi/pdf/10.1177/1524838018801332" target="_blank" rel="noopener">The impact of childhood abuse on the commercial sexual exploitation of youth: A systematic review and meta-analysis</a></div>
+            <div class="pub-venue">Trauma, Violence, &amp; Abuse</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2020</div>
+          <div>
+            <div class="pub-title"><a href="https://journals-sagepub-com.ezproxy.leidenuniv.nl/doi/10.1177/1077559519889178" target="_blank" rel="noopener">Enhancing the identification of commercial sexual exploitation among a population of high-risk youths using predictive regularization models</a></div>
+            <div class="pub-venue">Child Maltreatment</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2020</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1007/978-3-319-63058-8_6" target="_blank" rel="noopener">Measuring the nature and prevalence of human trafficking</a></div>
+            <div class="pub-venue">The Palgrave International Handbook of Human Trafficking</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="responses">
+          <div class="pub-year mono">2019</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1007/978-3-319-63058-8_45" target="_blank" rel="noopener">It's your business: The role of the private sector in human trafficking</a></div>
+            <div class="pub-venue">Edited volume chapter</div>
+            <div class="pub-tags"><span class="pub-tag">Tackling Trafficking</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="responses">
+          <div class="pub-year mono">2019</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1111/1745-9133.12456" target="_blank" rel="noopener">Failing victims? Challenges of the police response to human trafficking</a></div>
+            <div class="pub-venue">Criminology &amp; Public Policy</div>
+            <div class="pub-tags"><span class="pub-tag">Tackling Trafficking</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2019</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1002/9781118929803.ewac0460" target="_blank" rel="noopener">Sex Work</a></div>
+            <div class="pub-venue">The Encyclopedia of Women and Crime</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2018</div>
+          <div>
+            <div class="pub-title"><a href="https://doi.org/10.1093/bjc/azy019" target="_blank" rel="noopener">Connected to crime: An exploration of the nesting of labour trafficking and exploitation in legitimate markets</a></div>
+            <div class="pub-venue">The British Journal of Criminology</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2017</div>
+          <div>
+            <div class="pub-title"><a href="https://psycnet.apa.org/doi/10.1037/vio0000149" target="_blank" rel="noopener">Labor Trafficking Victimizations: Repeat Victimization and Polyvictimization</a></div>
+            <div class="pub-venue">Psychology of Violence</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2015</div>
+          <div>
+            <div class="pub-title"><a href="http://www.personal.soton.ac.uk/dab1f10/Forum.pdf" target="_blank" rel="noopener">Estimating the size of hard-to-reach populations using capture-recapture methodology, with a discussion of the ILO's global estimate of forced labour</a></div>
+            <div class="pub-venue">Forum on Crime &amp; Society</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+        <li class="pub" data-tags="victimization">
+          <div class="pub-year mono">2015</div>
+          <div>
+            <div class="pub-title"><a href="http://www.personal.soton.ac.uk/dab1f10/Forum.pdf" target="_blank" rel="noopener">Extremely wanted: Human trafficking statistics — what to do with the hodgepodge of numbers?</a></div>
+            <div class="pub-venue">Forum on Crime &amp; Society</div>
+            <div class="pub-tags"><span class="pub-tag">Victimization</span></div>
+          </div>
+        </li>
+
+      </ul>
+      <p class="scholar-note">Featured publications above. For the most recent updates and full list, see the <a href="https://scholar.google.com/citations?user=XcRaMEoAAAAJ&hl=nl&oi=ao" target="_blank" rel="noopener">Google Scholar profile</a>.</p>
+    </div>
+  </section>
+
+  <!-- ONGOING WORK -->
+  <section id="ongoing">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num">04 — Ongoing Work</div>
+          <h2>Current projects</h2>
+        </div>
+      </div>
+      <div class="ongoing-card">
+        <div class="txt">
+          <h3>Human Trafficking Research Projects, Leiden Law School</h3>
+          <p>Ongoing empirical work on human trafficking is coordinated through Leiden University's Institute for Criminal Law &amp; Criminology, in collaboration with colleagues across the Law faculty. Full project details are maintained on the university's research pages.</p>
+          <a class="btn btn-ghost" href="https://www.universiteitleiden.nl/en/research/research-projects/law/human-trafficking#tab-1" target="_blank" rel="noopener">View project page ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num">05 — Teaching</div>
+          <h2>Courses taught</h2>
+        </div>
+        <p class="section-sub">Syllabi available on request.</p>
+      </div>
+      <div class="teach-list">
+
+        <div class="teach-row">
+          <div>
+            <div class="teach-title">Human Trafficking</div>
+            <div class="teach-level">Undergraduate</div>
+          </div>
+          <div class="teach-detail">Northeastern University, Boston (Spring 2018) · Florida State University, Tallahassee (Fall 2020, Spring 2021) · Leiden University, the Netherlands (Spring 2021–2025). See the <a href="https://studiegids.universiteitleiden.nl/courses/115475/mensenhandel-een-interdisciplinair-perspectief-combivakhc-law-variant" target="_blank" rel="noopener">current course listing</a>.</div>
+        </div>
+
+        <div class="teach-row">
+          <div>
+            <div class="teach-title">Environmental Criminology</div>
+            <div class="teach-level">Undergraduate</div>
+          </div>
+          <div class="teach-detail">Leiden University (Spring 2021; Spring 2022). See the <a href="https://studiegids.universiteitleiden.nl/courses/110851/omgevingscriminologie" target="_blank" rel="noopener">course listing</a>.</div>
+        </div>
+
+        <div class="teach-row">
+          <div>
+            <div class="teach-title">Practicum: Explanatory Criminology</div>
+            <div class="teach-level">Undergraduate</div>
+          </div>
+          <div class="teach-detail">Leiden University (Spring 2021).</div>
+        </div>
+
+        <div class="teach-row">
+          <div>
+            <div class="teach-title">Introduction to Computational Statistics in R</div>
+            <div class="teach-level">Undergraduate / Graduate</div>
+          </div>
+          <div class="teach-detail">Northeastern University, Boston (Fall 2018).</div>
+        </div>
+
+        <div class="teach-row">
+          <div>
+            <div class="teach-title">Programming with Data in Python</div>
+            <div class="teach-level">Undergraduate</div>
+          </div>
+          <div class="teach-detail">Northeastern University, Boston — taught at New College of the Humanities, London (Spring 2019).</div>
+        </div>
+
+        <div class="teach-row">
+          <div>
+            <div class="teach-title">Crime, Data, and Ethics</div>
+            <div class="teach-level">Advanced Undergraduate · Summer School Honours</div>
+          </div>
+          <div class="teach-detail">Leiden University, the Netherlands (Summer 2021). See the <a href="https://studiegids.universiteitleiden.nl/en/courses/104418/crime-data-and-ethics-the-application-of-computational-research-methods-in-criminology" target="_blank" rel="noopener">course listing</a>.</div>
+        </div>
+
+      </div>
+      <div class="award-note">Recipient of the 2019 Outstanding Teaching Award, College of Social Sciences and Humanities, Northeastern University.</div>
+    </div>
+  </section>
+
+  <!-- AWARDS / FUNDING -->
+  <section id="awards">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num">06 — Awards &amp; Funding</div>
+          <h2>Grants</h2>
+        </div>
+      </div>
+      <div class="award-card">
+        <div class="award-year">2025 – 2029</div>
+        <h3>The life course of identified victims of criminal exploitation</h3>
+        <div class="funder">Funded by Politie &amp; Wetenschap (Police &amp; Science)</div>
+        <p>Studies the life course of identified victims of criminal exploitation and the effects of victim versus offender labeling in the context of criminal exploitation.</p>
+        <div class="award-team">Team: Fallon Cooper · Dr. Ieke de Vries · Dr. Babette van Hazebroek · Prof. Dr. Maarten Kunst · Prof. Dr. Arjan Blokland</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="section-num">07 — Contact</div>
+          <h2>Get in touch</h2>
+        </div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-block">
+          <h3>Email</h3>
+          <a class="email" href="mailto:i.de.vries@law.leidenuniv.nl">i.de.vries@law.leidenuniv.nl</a>
+          <a class="email" href="mailto:i.devries@northeastern.edu">i.devries@northeastern.edu</a>
+          <p>Leiden University is her current institutional home; the Northeastern address remains active for ongoing collaborations.</p>
+        </div>
+        <div class="contact-block">
+          <h3>Affiliation &amp; elsewhere</h3>
+          <p style="margin-top:0;">Northeastern University, Boston<br>Massachusetts, USA</p>
+          <div class="social-icons" style="margin-top:18px;">
+            <a href="https://www.linkedin.com/in/iekedevries/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            <a href="https://twitter.com/ieke_de_vries" target="_blank" rel="noopener" aria-label="Twitter / X">𝕏</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>© 2026 Ieke de Vries · Content adapted from iekedevries.com</p>
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/iekedevries/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+    <a href="https://twitter.com/ieke_de_vries" target="_blank" rel="noopener" aria-label="Twitter / X">𝕏</a>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var buttons = document.querySelectorAll('.filter-btn');
+    var pubs = document.querySelectorAll('.pub');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        buttons.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var filter = btn.getAttribute('data-filter');
+        pubs.forEach(function(pub){
+          if(filter === 'all' || pub.getAttribute('data-tags').indexOf(filter) !== -1){
+            pub.removeAttribute('hidden');
+          } else {
+            pub.setAttribute('hidden', '');
+          }
+        });
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
